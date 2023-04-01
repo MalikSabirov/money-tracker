@@ -11,6 +11,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { TransactionSearchComponent } from './components/transaction-search/transaction-search.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TransactionSearchComponent } from './components/transaction-search/tran
     MessagesComponent,
     DashboardComponent,
     TransactionSearchComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

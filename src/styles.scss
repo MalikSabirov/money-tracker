@@ -1,26 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Application-wide Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-h2,
-h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-}
-
-body,
-input[type="text"],
-button {
-  color: #333;
-  font-family: Cambria, Georgia, serif;
-}
-
-/* everywhere else */
 * {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  scrollbar-width: thin;
+}
+
+a {
+  text-decoration: none;
 }
