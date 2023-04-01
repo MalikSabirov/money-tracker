@@ -23,7 +23,7 @@ export class TransactionService {
 
   getTransactions(): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(this.baseUrl).pipe(
-      tap((_) => this.log('fetched heroes')),
+      tap((_) => this.log('fetched transactions')),
       catchError(this.handleError<Transaction[]>('getTransactions', []))
     );
   }
@@ -31,7 +31,7 @@ export class TransactionService {
   getTransaction(id: number): Observable<Transaction> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Transaction>(url).pipe(
-      tap((_) => this.log(`fetched hero id=${id}`)),
+      tap((_) => this.log(`fetched transaction id=${id}`)),
       catchError(this.handleError<Transaction>(`getTransaction id=${id}`))
     );
   }

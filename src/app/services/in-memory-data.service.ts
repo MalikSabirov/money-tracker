@@ -28,7 +28,7 @@ export class InMemoryDataService {
 
   genId(transactions: Transaction[]): number {
     return transactions.length > 0
-      ? Math.max(...transactions.map((hero) => hero.id)) + 1
+      ? Math.max(...transactions.map((Transaction) => Transaction.id)) + 1
       : 1;
   }
 }
