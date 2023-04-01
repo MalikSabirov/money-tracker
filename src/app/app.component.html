@@ -4,5 +4,9 @@
   <mat-sidenav class="sidenav" #sidenav mode="side" role="navigation">
     <app-sidenav (sideNavClose)="sidenav.toggle()"> </app-sidenav>
   </mat-sidenav>
-  <mat-sidenav-content>HEllo world!</mat-sidenav-content>
+  <mat-sidenav-content>
+    <main>
+      <router-outlet> </router-outlet>
+    </main>
+  </mat-sidenav-content>
 </mat-sidenav-container>

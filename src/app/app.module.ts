@@ -11,9 +11,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { CategoryComponent } from './components/category/category.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidenavComponent],
+  declarations: [AppComponent, HeaderComponent, SidenavComponent, HomepageComponent, PaymentComponent, CategoryComponent, TransactionComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
