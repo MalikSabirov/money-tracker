@@ -15,9 +15,17 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CategoryComponent } from './components/category/category.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
-
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidenavComponent, HomepageComponent, PaymentComponent, CategoryComponent, TransactionComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidenavComponent,
+    HomepageComponent,
+    PaymentComponent,
+    CategoryComponent,
+    TransactionComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +35,7 @@ import { TransactionComponent } from './components/transaction/transaction.compo
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
