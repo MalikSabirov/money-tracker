@@ -23,4 +23,21 @@ export class TransactionsComponent implements OnInit {
       .getTransactions()
       .subscribe((transactions) => (this.transactions = transactions));
   }
+
+  add(value: string, comment: string): void {
+    comment = comment.trim();
+    if (!value) {
+      return;
+    }
+    this.transactionService
+      .addTransaction({ value: Number(value), comment } as Transaction)
+      .subscribe((transaction) => {
+        this.transactions.push(transaction);
+      });
+  }
+
+  delete(transaction: Transaction): void {
+    this.transactions = this.transactions.filter((t) => t !== transaction);
+    this.transactionService.deleteTransaction(transaction.id).subscribe();
+  }
 }

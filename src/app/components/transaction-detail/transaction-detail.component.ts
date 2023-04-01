@@ -33,4 +33,12 @@ export class TransactionDetailComponent {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    if (this.transaction) {
+      this.transactionService
+        .updateTransaction(this.transaction)
+        .subscribe(() => this.goBack());
+    }
+  }
 }

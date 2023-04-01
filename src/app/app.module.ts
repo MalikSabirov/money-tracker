@@ -7,6 +7,10 @@ import { TransactionsComponent } from './components/transactions/transactions.co
 import { TransactionDetailComponent } from './components/transaction-detail/transaction-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { TransactionSearchComponent } from './components/transaction-search/transaction-search.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +19,18 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     TransactionDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    TransactionSearchComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    // fake API
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

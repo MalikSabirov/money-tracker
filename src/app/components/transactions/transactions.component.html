@@ -1,4 +1,25 @@
 <h2>My transaction</h2>
+
+<div>
+  <label for="new-transaction-value">transaction value: </label>
+  <input id="new-transaction-value" #transactionValue type="number" />
+
+  <label for="new-transaction-comment">transaction comment: </label>
+  <input id="new-transaction-comment" #transactionComment />
+
+  <button
+    type="button"
+    class="add-button"
+    (click)="
+      add(transactionValue.value, transactionComment.value);
+      transactionValue.value = '';
+      transactionComment.value = ''
+    "
+  >
+    Add transaction
+  </button>
+</div>
+
 <ul class="transactions">
   <li *ngFor="let transaction of transactions">
     <a routerLink="/detail/{{ transaction.id }}">
@@ -6,5 +27,14 @@
       <span class="value">{{ transaction.value }}</span>
       <span class="comment">{{ transaction.comment }}</span>
     </a>
+
+    <button
+      type="button"
+      class="delete"
+      title="delete hero"
+      (click)="delete(transaction)"
+    >
+      x
+    </button>
   </li>
 </ul>
