@@ -16,6 +16,9 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { CategoryComponent } from './components/category/category.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +33,11 @@ import { MatCardModule } from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
+    // material
     MatSlideToggleModule,
     MatToolbarModule,
     MatIconModule,

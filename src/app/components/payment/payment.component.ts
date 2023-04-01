@@ -17,7 +17,7 @@ export class PaymentComponent implements OnInit {
   }
 
   getData() {
-    this.paymentService.getPayment().subscribe((res) => {
+    this.paymentService.getPayments().subscribe((res) => {
       this.payments = res;
     });
   }
