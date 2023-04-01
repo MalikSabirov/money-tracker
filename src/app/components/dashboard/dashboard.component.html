@@ -1,0 +1,17 @@
+<h2>Dashboard</h2>
+
+<div>
+  <h3>Expenses</h3>
+  <a *ngFor="let expense of expenses" routerLink="/detail/{{ expense.id }}">
+    {{ expense.value }}
+    {{ expense.comment }}
+  </a>
+</div>
+
+<div>
+  <h3>Incomes</h3>
+  <a *ngFor="let income of incomes" routerLink="/detail/{{ income.id }}">
+    {{ income.value }}
+    {{ income.comment }}
+  </a>
+</div>

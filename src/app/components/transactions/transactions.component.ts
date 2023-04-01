@@ -10,24 +10,12 @@ import { TransactionService } from 'src/app/services/transaction.service';
   styleUrls: ['./transactions.component.scss'],
 })
 export class TransactionsComponent implements OnInit {
-  constructor(
-    private transactionService: TransactionService,
-    private messageService: MessageService
-  ) {}
+  constructor(private transactionService: TransactionService) {}
 
   transactions: Transaction[] = [];
 
-  selectedTransaction?: Transaction;
-
   ngOnInit(): void {
     this.getTransactions();
-  }
-
-  onSelect(transaction: Transaction): void {
-    this.selectedTransaction = transaction;
-    this.messageService.add(
-      `TransactionsComponent: Selected transaction id=${transaction.id}`
-    );
   }
 
   getTransactions(): void {

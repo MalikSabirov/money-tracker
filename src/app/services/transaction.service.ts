@@ -15,4 +15,10 @@ export class TransactionService {
     this.messageService.add('TransactionService: fetched transactions');
     return transactions;
   }
+
+  getTransaction(id: number): Observable<Transaction> {
+    const transaction = TRANSACTIONS.find((t) => t.id === id)!;
+    this.messageService.add(`TransactionService: fetched transaction id=${id}`);
+    return of(transaction);
+  }
 }
