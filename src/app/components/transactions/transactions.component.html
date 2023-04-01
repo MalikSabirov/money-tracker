@@ -1,0 +1,14 @@
+<h2>My transaction</h2>
+<ul class="transactions">
+  <li *ngFor="let transaction of transactions">
+    <button type="button" (click)="onSelect(transaction)">
+      <span class="badge">{{ transaction.id }}</span>
+      <span class="value">{{ transaction.value }}</span>
+      <span class="comment">{{ transaction.comment }}</span>
+    </button>
+  </li>
+</ul>
+
+<app-transaction-detail
+  [transaction]="selectedTransaction"
+></app-transaction-detail>

@@ -1,0 +1,18 @@
+<div *ngIf="transaction">
+  <h2>Details</h2>
+  <div><span>id: </span>{{ transaction.id }}</div>
+
+  <div>
+    <label for="comment">comment: </label>
+    <input
+      id="comment"
+      [(ngModel)]="transaction.comment"
+      placeholder="comment"
+    />
+  </div>
+
+  <div>
+    <label for="value">value: </label>
+    <input id="value" [(ngModel)]="transaction.value" placeholder="value" />
+  </div>
+</div>
